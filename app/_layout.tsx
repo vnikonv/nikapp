@@ -5,7 +5,7 @@ import { use, useEffect } from "react";
 
 export default function RootLayout() {
   const [fontsLoaded, error] = useFonts({
-    FreePixel: "https://sadhost.neocities.org/fonts/FreePixel.ttf",
+    FreePixel: require('../assets/fonts/FreePixel.ttf'),
   });
 
   useEffect(() => {
