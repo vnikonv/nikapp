@@ -4,18 +4,18 @@ import { useFonts } from "expo-font";
 import { use, useEffect } from "react";
 
 export default function RootLayout() {
-  const [fontsLoaded, error] = useFonts({
-    FreePixel: require('../assets/fonts/FreePixel.ttf'),
-  });
+    const [fontsLoaded, error] = useFonts({
+        FreePixel: require('../assets/fonts/FreePixel.ttf'),
+    });
 
-  useEffect(() => {
-    if (error) {
-      throw error;
-    }
-    if (!fontsLoaded) {
-      SplashScreen.hideAsync;
-    }
-  }, [fontsLoaded, error]);
+    useEffect(() => {
+        if (error) {
+            throw error;
+        }
+        if (!fontsLoaded) {
+            SplashScreen.hideAsync;
+        }
+    }, [fontsLoaded, error]);
 
-  return <Stack />;
+    return <Stack />;
 }
