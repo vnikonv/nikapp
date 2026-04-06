@@ -3,6 +3,7 @@ import CustomInput from "@/components/CustomInput";
 import { Link, router } from "expo-router";
 import React, { useState } from "react";
 import { Alert, Text, View } from "react-native";
+import { signIn } from "@/lib/appwrite";
 
 const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,8 +25,7 @@ const SignIn = () => {
     setIsSubmitting(true);
 
     try {
-      // login process
-      Alert.alert("Success", "User signed in successfully");
+      await signIn({ email, password });
       router.replace("/");
     } catch (error: any) {
       Alert.alert("Error", error.message);
